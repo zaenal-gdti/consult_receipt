@@ -1,0 +1,14 @@
+
+docker run -d -p 8888:8888 jupyter/pyspark-notebook start-notebook.sh --NotebookApp.token=''
+
+
+docker run -it -p 10000:8888 --user root -e GRANT_SUDO=yes quay.io/jupyter/minimal-notebook 
+
+import subprocess
+
+subprocess.run(['libreoffice', '--convert-to', 'pdf' ,'demo.docx'])
+
+
+docker run -it -rm -p 10001:8888 --user root -e GRANT_SUDO=yes jupyterops
+
+docker build -t jupyterops .
